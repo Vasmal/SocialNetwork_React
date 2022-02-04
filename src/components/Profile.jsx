@@ -16,9 +16,9 @@ return (
           New post  
         </div>
         <ul className={classes.list}>
-          <li className={classes.item}>Post 1</li>
-          <li className={classes.item}>Post 2</li>
-          <li className={classes.item}>Post 3</li>
+          <li className={classes.list_item}>Post 1</li>
+          <li className={classes.list_item}>Post 2</li>
+          <li className={classes.list_item}>Post 3</li>
         </ul>
       </div>
     </div>
