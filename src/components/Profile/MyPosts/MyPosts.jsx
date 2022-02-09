@@ -5,10 +5,6 @@ import Post from './Post/Post';
 function MyPosts() {
 return (
     <div className={classes.posts}>
-      <p>My posts</p>
-      <div className={classes.new}>
-        New post  
-      </div>
       <div className={classes.list}>
         <Post message='Hi, how are you?' likes='1'/>
         <Post message='My first post' likes='5'/>

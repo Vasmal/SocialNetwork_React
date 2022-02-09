@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Post.module.css';
 
 function Post(props) {
-  debugger;
 return (
     <div className={classes.post}>
       <p>
