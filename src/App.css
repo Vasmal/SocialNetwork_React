@@ -32,12 +32,11 @@ body {
   "h h"
   "n c";
   grid-template-rows: 110px 1fr;
-  grid-template-columns: 245px 1fr;
+  grid-template-columns: minmax(200px,20%) 1fr;
   gap: 15px;
 }
 
 .content {
   grid-area: c;
   align-self: start;
-  
 }

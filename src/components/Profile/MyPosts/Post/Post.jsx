@@ -7,7 +7,7 @@ return (
       <p>
         {props.message}
       </p>
-      <span>likes: {props.likes}</span>
+      
     </div>
   );
 }

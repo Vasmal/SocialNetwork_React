@@ -1,10 +1,13 @@
-.profile {
-  
+.info {
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 0 10px 20px;
+  overflow: hidden;
+  margin-bottom: 15px;
 }
 
 .background {
   position: relative;
-  height: 150px;
+  height: 215px;
 }
 
 .background img {
@@ -17,9 +20,108 @@
 }
 
 .description {
-
+  padding: 0 20px;
+  margin-top: -70px;
 }
 
-.new-post {
+.user_logo {
+  width: 110px;
+  height: 110px;
+  position: relative;
+  background: #BAB9C1;
+  border-radius: 16px;
+  overflow: hidden;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-bottom: 15px;
+}
+
+.user_logo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+}
+
+.user__info {
+  color: #292929;
+  margin-bottom: 20px;
+}
+
+.user__name {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.019em;
+  margin-bottom: 10px;
+}
+
+.user__data {
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.user__location {
+  letter-spacing: -0.016em;
+  position: relative;
+  margin-right: 25px;
+  margin-bottom: 10px;
+}
+
+.user__friends {
+  color: #1666C5;
+  cursor: pointer;
+}
+
+.new__post {
+  display: flex;
+  flex-direction: column;
   
+  padding: 0 20px 20px 20px;
+}
+.post__text {
+  display: block;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 20px;
+  background: #F3F3F3;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  resize: none;
+}
+
+.post__text:focus {
+  box-shadow: 3px 3px 15px rgb(0 0 0 / 25%);
+}
+
+.add__post {
+  align-self: end;
+  font-size: 16px;
+  line-height: 18px;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 5px;
+  color: #9593A0;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
+  
+  transition: 0.1s;
+}
+
+.add__post:focus, .add__post:hover {
+  background-color: #1666C5;
+  color: #fff;
+  box-shadow: 3px 3px 6px rgb(0 0 0 / 25%);
+}
+
+.add__post:active {
+  box-shadow: none;
+  transform: translate(1px, 1px);
 }
