@@ -3,12 +3,15 @@ import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
 function MyPosts() {
+  let posts =[
+    {text: 'Hi, how are you?'},
+    {text: 'My first post'},
+    {text: 'My second message'},
+  ];
 return (
     <div className={classes.posts}>
       <div className={classes.list}>
-        <Post message='Hi, how are you?' likes='1'/>
-        <Post message='My first post' likes='5'/>
-        <Post message='My second message' likes='3'/>
+        {posts.map(post => <Post message={post.text} />)}
       </div>
     </div>
   );
