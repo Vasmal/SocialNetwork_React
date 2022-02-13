@@ -1,23 +1,85 @@
 .dialogs {
+  min-height: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
+}
 
+.title {
+  font-size: 24px;
+  line-height: 24px;
+  color: #262628;
+  font-weight: 700;
+  letter-spacing: 0.019em;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
 }
 
 .list {
-
+  flex-basis: 35%;
+  width: 35%;
+  border-right: 1px solid rgba(58, 58, 58, .5);
+  padding-right: 15px;
+  flex-shrink: 0;
 }
 
 .dialog {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 25px 5px 5px 25px;
+  transition: 0.1s;
+}
 
+.dialog:hover, .dialog:focus, .dialog:active {
+  color: #fff;
+  background: rgba(22, 102, 197, .6);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.dialog:last-child {
+  margin-bottom: 0;
+}
+
+.img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background-color: #F3F3F3;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #3A3A3A;
 }
 
 .messages {
-
-}
-
-.messages {
-
+  flex-grow: 1;
 }
 
 .message {
-  
+  flex-basis: 80%;
+  max-width: 80%;
+  min-height: 40px;
+  color: #292929;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 5px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
