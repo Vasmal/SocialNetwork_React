@@ -2,37 +2,48 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Dialogs.module.css';
 
-function Dialogs(props) {
+
+
+
+const Dialog = (props) => {
   const setActive = ({isActive}) => isActive ? `${classes.dialog} ${classes.active}` : classes.dialog;
+  let path = '/dialogs/' + props.id;
+  return (
+    <NavLink to={path} className={setActive}>
+      <span className={classes.img}><img src="" alt="" /></span>
+      <span className={classes.name}>{props.name}</span>
+    </NavLink>
+  );
+}
+
+const Message = (props) => {
+  return (
+    <div className={classes.message}>{props.text}</div>
+  );
+}
+
+
+function Dialogs(props) {
   return (
     <div className={classes.dialogs}>
       <div className={classes.title}>
         Available dialogs
       </div>
       <div className={classes.content}>
+        
         <div className={classes.list}>
-          <NavLink to='/dialogs/1' className={setActive}>
-            <span className={classes.img}><img src="" alt="" /></span>
-            <span className={classes.name}>Sergey</span>
-          </NavLink>
-          <NavLink to='/dialogs/2' className={setActive}>
-            <span className={classes.img}><img src="" alt="" /></span>
-            <span className={classes.name}>Sveta</span>
-          </NavLink>
-          <NavLink to='/dialogs/3' className={setActive}>
-            <span className={classes.img}><img src="" alt="" /></span>
-            <span className={classes.name}>Victor</span>
-          </NavLink>
-          <NavLink to='/dialogs/4' className={setActive}>
-            <span className={classes.img}><img src="" alt="" /></span>
-            <span className={classes.name}>Dima</span>
-          </NavLink>
+          <Dialog name='Sergey' id="1"/>
+          <Dialog name='Sveta' id="2"/>
+          <Dialog name='Valera' id="3"/>
+          <Dialog name='John' id="4"/>
+          <Dialog name='Brad' id="5"/>
         </div>
 
         <div className={classes.messages}>
-          <div className={classes.message}>ergerertg ergerertg ergerertg ergerertg ergerertg ergerertg ergerertg ergerertg</div>
-          <div className={classes.message}>ergerertg</div>
-          <div className={classes.message}>ergerertg</div>
+          <Message text='Hi'/>
+          <Message text='Yo'/>
+          <Message text='How are you?'/>
+          <Message text="I'm fine"/>
         </div>
       </div>
     </div>
