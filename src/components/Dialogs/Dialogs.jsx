@@ -1,7 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import classes from './Dialogs.module.css';
 
 function Dialogs(props) {
+  const setActive = ({isActive}) => isActive ? `${classes.dialog} ${classes.active}` : classes.dialog;
   return (
     <div className={classes.dialogs}>
       <div className={classes.title}>
@@ -9,22 +11,22 @@ function Dialogs(props) {
       </div>
       <div className={classes.content}>
         <div className={classes.list}>
-          <div className={classes.dialog}>
-            <div className={classes.img}><img src="" alt="" /></div>
-            <div className={classes.name}>Sergey</div>
-          </div>
-          <div className={classes.dialog}>
-            <div className={classes.img}><img src="" alt="" /></div>
-            <div className={classes.name}>Sveta</div>
-          </div>
-          <div className={classes.dialog}>
-            <div className={classes.img}><img src="" alt="" /></div>
-            <div className={classes.name}>Victor</div>
-          </div>
-          <div className={classes.dialog}>
-            <div className={classes.img}><img src="" alt="" /></div>
-            <div className={classes.name}>Dima</div>
-          </div>
+          <NavLink to='/dialogs/1' className={setActive}>
+            <span className={classes.img}><img src="" alt="" /></span>
+            <span className={classes.name}>Sergey</span>
+          </NavLink>
+          <NavLink to='/dialogs/2' className={setActive}>
+            <span className={classes.img}><img src="" alt="" /></span>
+            <span className={classes.name}>Sveta</span>
+          </NavLink>
+          <NavLink to='/dialogs/3' className={setActive}>
+            <span className={classes.img}><img src="" alt="" /></span>
+            <span className={classes.name}>Victor</span>
+          </NavLink>
+          <NavLink to='/dialogs/4' className={setActive}>
+            <span className={classes.img}><img src="" alt="" /></span>
+            <span className={classes.name}>Dima</span>
+          </NavLink>
         </div>
 
         <div className={classes.messages}>
