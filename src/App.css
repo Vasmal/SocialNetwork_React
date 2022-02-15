@@ -44,3 +44,8 @@ body {
   grid-area: c;
   align-self: start;
 }
+
+.aside {
+  grid-area: n;
+  align-self: start;
+}

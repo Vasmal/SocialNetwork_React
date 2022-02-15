@@ -2,22 +2,12 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
+// import dialogData from './dialogData';
+// import messagesData from './messagesData';
 
 function Dialogs(props) {
-  let dialogData = [
-    {id: 1, name: 'Sergey'},
-    {id: 2, name: 'Sveta'},
-    {id: 3, name: 'Valera'},
-    {id: 4, name: 'John'},
-    {id: 5, name: 'Brad'},
-  ];
-
-  let messagesData = [
-    {message: 'Hi'},
-    {message: 'Yo'},
-    {message: 'How are you?'},
-    {message: 'I\'m fine'},
-  ];
+let dialogData = props.messages.dialogs;
+let messagesData = props.messages.dialogText;
 
   return (
     <div className={classes.dialogs}>

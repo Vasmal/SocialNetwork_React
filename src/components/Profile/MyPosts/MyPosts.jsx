@@ -1,13 +1,11 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
+// import posts from './../posts.js';
 
-function MyPosts() {
-  let posts =[
-    {text: 'Hi, how are you?'},
-    {text: 'My first post'},
-    {text: 'My second message'},
-  ];
+function MyPosts(props) {
+let posts = props.posts;
+
 return (
     <div className={classes.posts}>
       <div className={classes.list}>

@@ -9,22 +9,33 @@ import Music from './components/Music/Music';
 import Profile from './components/Profile/Profile';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
+import FriendsOnline from './components/Friends/FriendsOnline';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Navbar />
-        <Routes>
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/dialogs/*' element={<Dialogs />} />
-          <Route path='/news' element={<News /> } />
-          <Route path='/music' element={<Music />} />
-          <Route path='/settings' element={<Settings />} />
-       </Routes>
+        <aside className='aside'>
+          <Navbar />
+          <FriendsOnline />
+        </aside>
+        
+        <div className="content">
+          <div className="friends__online">
+            
+          </div>
+          <Routes>
+            <Route path='/profile' element={<Profile profile={props.state.profile}/>} />
+            <Route path='/dialogs/*' element={<Dialogs messages={props.state.messages}/>} />
+            <Route path='/news' element={<News /> } />
+            <Route path='/music' element={<Music />} />
+            <Route path='/settings' element={<Settings />} />
+          </Routes>
+        </div>
+       
       </div>
-      </BrowserRouter>  
+      </BrowserRouter>
   );
 }
 

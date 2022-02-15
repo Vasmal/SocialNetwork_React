@@ -5,7 +5,7 @@ import classes from './../Dialogs.module.css';
 
 const Dialog = (props) => {
   const setActive = ({isActive}) => isActive ? `${classes.dialog} ${classes.active}` : classes.dialog;
-  
+
   let path = '/dialogs/' + props.id;
   return (
     <NavLink to={path} className={setActive}>
