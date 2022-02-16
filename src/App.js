@@ -18,7 +18,7 @@ function App(props) {
         <Header />
         <aside className='aside'>
           <Navbar />
-          <FriendsOnline />
+          <FriendsOnline online={props.state.friends.online} />
         </aside>
         
         <div className="content">
