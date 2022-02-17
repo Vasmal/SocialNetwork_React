@@ -4,6 +4,12 @@ import background from './../Images/profile_background.jpg';
 import logo from './../Images/logo.jpg';
 
 const Info = (props) => {
+  let newPost = React.createRef();
+  let addPost = () => {
+    let text = newPost.current.value;
+    props.addPost(text);
+    newPost.current.value = '';
+  }
   return (
     <div className={classes.info}>
       <div className={classes.background}>
@@ -23,8 +29,8 @@ const Info = (props) => {
       </div>
 
       <div className={classes.new__post}>
-        <textarea className={classes.post__text} placeholder='New post'></textarea>
-        <button className={classes.add__post}>Add post</button>
+        <textarea ref={newPost} className={classes.post__text} placeholder='New post'></textarea>
+        <button  onClick={addPost} className={classes.add__post}>Add post</button>
       </div>
     </div>
   );

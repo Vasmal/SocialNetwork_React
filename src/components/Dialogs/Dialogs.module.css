@@ -1,8 +1,12 @@
 .dialogs {
   min-height: 500px;
-  padding: 20px;
+  padding: 20px 0 20px 20px;
   border-radius: 10px;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
+  height: 100%;
+  /* max-height: 730px; */
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -16,6 +20,8 @@
 .content {
   display: flex;
   gap: 20px;
+  height: 100%;
+  
 }
 
 .list {
@@ -81,6 +87,15 @@
 
 .messages {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+.messagesText {
+  max-height: 500px;
+  /* overflow-y: auto; */
+  margin-bottom: 20px;
 }
 
 .message {
@@ -92,4 +107,30 @@
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+.newMessage {
+  margin-top: auto;
+  margin-bottom: 20px;
+  max-height: 200px;
+  flex-shrink: 0;
+}
+
+.newText {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  background: #F3F3F3;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  resize: none;
+  transition: 0.3s;
+}
+
+.newText:focus {
+  box-shadow: 3px 3px 15px rgb(0 0 0 / 25%);
 }

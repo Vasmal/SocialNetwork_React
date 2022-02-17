@@ -19,10 +19,26 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: #858383;
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+}
 
 html {
   overflow-x:hidden;
   width: 100vw;
+  scrollbar-color: #858383 #e4e4e4;
+  scrollbar-width: thin;
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -38,11 +54,12 @@ body {
   grid-template-rows: 110px 1fr;
   grid-template-columns: minmax(200px,20%) 1fr;
   gap: 15px;
+  min-height: 100vh;
 }
 
 .content {
   grid-area: c;
-  align-self: start;
+  align-self: stretch;
 }
 
 .aside {

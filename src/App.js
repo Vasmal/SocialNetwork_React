@@ -22,11 +22,8 @@ function App(props) {
         </aside>
         
         <div className="content">
-          <div className="friends__online">
-            
-          </div>
           <Routes>
-            <Route path='/profile' element={<Profile profile={props.state.profile}/>} />
+            <Route path='/profile' element={<Profile profile={props.state.profile} addPost={props.addPost}/>} />
             <Route path='/dialogs/*' element={<Dialogs messages={props.state.messages}/>} />
             <Route path='/news' element={<News /> } />
             <Route path='/music' element={<Music />} />

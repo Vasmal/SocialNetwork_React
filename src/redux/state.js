@@ -1,3 +1,4 @@
+import rerenderEntireTree from "../render";
 
 let state = {
   messages: {
@@ -13,14 +14,15 @@ let state = {
       {message: 'Yo'},
       {message: 'How are you?'},
       {message: 'I\'m fine'},
+      
     ]
   },
 
   profile: {
     posts: [
-      {text: 'Hi, how are you?'},
-      {text: 'My first post'},
-      {text: 'My second message'},
+      {id: 1, text: 'Hi, how are you?'},
+      {id: 2, text: 'My first post'},
+      {id: 3, text: 'My second message'},
     ]
   },
 
@@ -34,6 +36,15 @@ let state = {
   }
 }
 
+export let addPost = (text) => {
+  let newPost = {
+    id: 4,
+    text: text
+  }
+  state.profile.posts.push(newPost);
+  ;
+  rerenderEntireTree(state);
+}
 
 
 export default state;
