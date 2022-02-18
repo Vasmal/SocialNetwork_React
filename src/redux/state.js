@@ -23,7 +23,8 @@ let state = {
       {id: 1, text: 'Hi, how are you?'},
       {id: 2, text: 'My first post'},
       {id: 3, text: 'My second message'},
-    ]
+    ],
+    newPostText: '',
   },
 
   friends: {
@@ -36,13 +37,18 @@ let state = {
   }
 }
 
-export let addPost = (text) => {
+export let addPost = () => {
   let newPost = {
     id: 4,
-    text: text
+    text: state.profile.newPostText
   }
   state.profile.posts.push(newPost);
-  ;
+  state.profile.newPostText = '';
+  rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+  state.profile.newPostText = newText;
   rerenderEntireTree(state);
 }
 

@@ -3,13 +3,21 @@ import classes from './ProfileInfo.module.css';
 import background from './../Images/profile_background.jpg';
 import logo from './../Images/logo.jpg';
 
-const Info = (props) => {
+const ProfileInfo = (props) => {
   let newPost = React.createRef();
+
   let addPost = () => {
     let text = newPost.current.value;
-    props.addPost(text);
-    newPost.current.value = '';
+    if(text) {
+      props.addPost();
+    }
   }
+
+let updateNewPostText = () => {
+  let text = newPost.current.value;
+  props.updateNewPostText(text);
+}
+
   return (
     <div className={classes.info}>
       <div className={classes.background}>
@@ -29,11 +37,11 @@ const Info = (props) => {
       </div>
 
       <div className={classes.new__post}>
-        <textarea ref={newPost} className={classes.post__text} placeholder='New post'></textarea>
-        <button  onClick={addPost} className={classes.add__post}>Add post</button>
+        <textarea onChange={updateNewPostText} ref={newPost} className={classes.post__text} placeholder='New post' value={props.newPostText}/>
+        <button onClick={addPost} className={classes.add__post}>Add post</button>
       </div>
     </div>
   );
 }
 
-export default Info;
+export default ProfileInfo;
