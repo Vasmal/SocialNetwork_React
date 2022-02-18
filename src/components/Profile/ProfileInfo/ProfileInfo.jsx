@@ -7,13 +7,13 @@ const ProfileInfo = (props) => {
   let newPost = React.createRef();
 
   let addPost = () => {
-    let text = newPost.current.value;
+    let text = props.newPostText;
     if(text) {
       props.addPost();
     }
   }
 
-let updateNewPostText = () => {
+let onPostChange = () => {
   let text = newPost.current.value;
   props.updateNewPostText(text);
 }
@@ -37,7 +37,7 @@ let updateNewPostText = () => {
       </div>
 
       <div className={classes.new__post}>
-        <textarea onChange={updateNewPostText} ref={newPost} className={classes.post__text} placeholder='New post' value={props.newPostText}/>
+        <textarea onChange={onPostChange} ref={newPost} className={classes.post__text} placeholder='New post' value={props.newPostText}/>
         <button onClick={addPost} className={classes.add__post}>Add post</button>
       </div>
     </div>

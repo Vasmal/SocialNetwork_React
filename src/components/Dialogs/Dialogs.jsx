@@ -24,7 +24,9 @@ function Dialogs(props) {
             {messagesData}
           </div>
           <div className={classes.newMessage}>
-            <NewMessage />
+            <NewMessage addMessage={props.addMessage}
+                        updateNewMessageText={props.updateNewMessageText}
+                        newMessageText={props.messages.newMessageText} />
           </div>
         </div>
       </div>
