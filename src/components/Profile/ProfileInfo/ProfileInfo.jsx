@@ -5,17 +5,17 @@ import logo from './../Images/logo.jpg';
 
 const ProfileInfo = (props) => {
   let newPost = React.createRef();
-
+  
   let addPost = () => {
     let text = props.newPostText;
     if(text) {
-      props.addPost();
+      props.dispatch( {type: 'ADD-POST'} )
     }
   }
-
+ 
 let onPostChange = () => {
   let text = newPost.current.value;
-  props.updateNewPostText(text);
+  props.dispatch( {type: 'UPDATE-NEW-POST-TEXT', newText: text} )
 }
 
   return (

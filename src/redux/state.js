@@ -35,6 +35,9 @@ let store = {
       ]
     }
   },
+  _callSubscriber() {
+    console.log('method for obserever');
+  },
 
   getState() {
     return this._state;
@@ -44,39 +47,67 @@ let store = {
     console.log('method for obserever');
   },
 
-  addPost() {
-    let newPost = {
-      id: 4,
-      text: this._state.profile.newPostText
-    }
-    this._state.profile.posts.push(newPost);
-    this._state.profile.newPostText = '';
-    this._callSubscriber(this._state);
-  },
-
-  updateNewPostText(newText) {
-    this._state.profile.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
-
-  addMessage() {
-    let newMessage = {
-      message : this._state.messages.newMessageText
-    }
-  
-    this._state.messages.dialogText.push(newMessage);
-    this._state.messages.newMessageText = '';
-    this._callSubscriber(this._state);
-  },
-
-  updateNewMessageText(newMessage) {
-    this._state.messages.newMessageText = newMessage;
-    this._callSubscriber(this._state);
-  },
-
   subscribe(observer) {
     this._callSubscriber = observer;
+  },
+
+  // addPost() {
+  //   let newPost = {
+  //     id: 4,
+  //     text: this._state.profile.newPostText
+  //   }
+  //   this._state.profile.posts.push(newPost);
+  //   this._state.profile.newPostText = '';
+  //   this._callSubscriber(this._state);
+  // },
+
+  // updateNewPostText(newText) {
+  //   this._state.profile.newPostText = newText;
+  //   this._callSubscriber(this._state);
+  // },
+
+  // addMessage() {
+  //   let newMessage = {
+  //     message : this._state.messages.newMessageText
+  //   }
+  
+  //   this._state.messages.dialogText.push(newMessage);
+  //   this._state.messages.newMessageText = '';
+  //   this._callSubscriber(this._state);
+  // },
+
+  // updateNewMessageText(newMessage) {
+  //   this._state.messages.newMessageText = newMessage;
+  //   this._callSubscriber(this._state);
+  // },
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      let newPost = {
+        id: 4,
+        text: this._state.profile.newPostText
+      }
+      this._state.profile.posts.push(newPost);
+      this._state.profile.newPostText = '';
+      this._callSubscriber(this._state);
+      
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        this._state.profile.newPostText = action.newText;
+        this._callSubscriber(this._state);
+    } else if (action.type === 'ADD-MESSAGE') {
+        let newMessage = {
+          message : this._state.messages.newMessageText
+        }
+      
+        this._state.messages.dialogText.push(newMessage);
+        this._state.messages.newMessageText = '';
+        this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+        this._state.messages.newMessageText = action.newMessage;
+        this._callSubscriber(this._state);
+    }
   }
+
 }
 
 export default store;
