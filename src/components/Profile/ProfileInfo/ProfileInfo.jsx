@@ -2,21 +2,21 @@ import React from 'react';
 import classes from './ProfileInfo.module.css';
 import background from './../Images/profile_background.jpg';
 import logo from './../Images/logo.jpg';
+import { addPostActionCreate, updateNewPostTextActionCreate } from '../../../redux/state';
 
 const ProfileInfo = (props) => {
-  let newPost = React.createRef();
-  
+
   let addPost = () => {
     let text = props.newPostText;
     if(text) {
-      props.dispatch( {type: 'ADD-POST'} )
+      props.dispatch( addPostActionCreate() )
     }
   }
  
-let onPostChange = () => {
-  let text = newPost.current.value;
-  props.dispatch( {type: 'UPDATE-NEW-POST-TEXT', newText: text} )
-}
+  let onPostChange = (e) => {
+    let text = e.target.value;
+    props.dispatch( updateNewPostTextActionCreate(text) );
+  }
 
   return (
     <div className={classes.info}>
@@ -37,7 +37,7 @@ let onPostChange = () => {
       </div>
 
       <div className={classes.new__post}>
-        <textarea onChange={onPostChange} ref={newPost} className={classes.post__text} placeholder='New post' value={props.newPostText}/>
+        <textarea onChange={onPostChange} className={classes.post__text} placeholder='New post' value={props.newPostText}/>
         <button onClick={addPost} className={classes.add__post}>Add post</button>
       </div>
     </div>
