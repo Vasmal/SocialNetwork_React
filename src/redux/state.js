@@ -1,8 +1,6 @@
-const addPost = 'ADD-POST';
-const updateNewPostText = 'UPDATE-NEW-POST-TEXT';
-const addMessage = 'ADD-MESSAGE';
-const updateNewMessageText = 'UPDATE-NEW-MESSAGE-TEXT';
-
+import friendsReducer from "./friends-reducer";
+import messagesReducer from "./messages-reducer";
+import profileReducer from "./profile-reducer";
 
 let store = {
   _state: {
@@ -50,58 +48,16 @@ let store = {
     return this._state;
   },
 
-  _callSubscriber() {
-    console.log('method for obserever');
-  },
-
   subscribe(observer) {
     this._callSubscriber = observer;
   },
 
   dispatch(action) {
-    if (action.type === addPost) {
-      let newPost = {
-        id: 4,
-        text: this._state.profile.newPostText
-      }
-      this._state.profile.posts.push(newPost);
-      this._state.profile.newPostText = '';
-      this._callSubscriber(this._state);
-      
-    } else if (action.type === updateNewPostText) {
-        this._state.profile.newPostText = action.newText;
-        this._callSubscriber(this._state);
-
-    } else if (action.type === addMessage) {
-        let newMessage = {
-          id: 5,
-          message : this._state.messages.newMessageText
-        }
-        this._state.messages.dialogText.push(newMessage);
-        this._state.messages.newMessageText = '';
-        this._callSubscriber(this._state);
-
-    } else if (action.type === updateNewMessageText) {
-        this._state.messages.newMessageText = action.newMessage;
-        this._callSubscriber(this._state);
-    }
+    this._state.profile = profileReducer(this._state.profile, action);
+    this._state.messages = messagesReducer(this._state.messages, action);
+    this._state.friends = friendsReducer(this._state.friends, action)
+    this._callSubscriber(this._state);
   }
-}
-
-export const addMessageActionCreate = () => {
-  return {type: addMessage}
-}
-
-export const updateNewMessageTextActionCreate = (text) => {
-  return {type: updateNewMessageText, newMessage: text}
-}
-
-export const addPostActionCreate = () => {
-  return {type: addPost}
-}
-
-export const updateNewPostTextActionCreate = (text) => {
-  return {type: updateNewPostText, newText: text}
 }
 
 export default store;

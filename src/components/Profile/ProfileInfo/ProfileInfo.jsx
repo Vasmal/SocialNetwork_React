@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './ProfileInfo.module.css';
 import background from './../Images/profile_background.jpg';
 import logo from './../Images/logo.jpg';
-import { addPostActionCreate, updateNewPostTextActionCreate } from '../../../redux/state';
+import { addPostActionCreate, updateNewPostTextActionCreate } from '../../../redux/profile-reducer';
 
 const ProfileInfo = (props) => {
 

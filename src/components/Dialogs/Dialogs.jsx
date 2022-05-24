@@ -3,8 +3,7 @@ import classes from './Dialogs.module.css';
 import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
 import NewMessage from './Message/NewMessage';
-// import dialogData from './dialogData';
-// import messagesData from './messagesData';
+
 
 function Dialogs(props) {
   let dialogData = props.messages.dialogs.map(dialog => <Dialog name={dialog.name} id={dialog.id}/>);
