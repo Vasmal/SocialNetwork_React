@@ -18,13 +18,12 @@ function App(props) {
         <Header />
         <aside className='aside'>
           <Navbar />
-          <FriendsOnline online={props.state.friends.online} />
+          <FriendsOnline online={props.state.friends.online} /> 
         </aside>
         
         <div className="content">
           <Routes>
-            <Route path='/profile' element={<Profile profile={props.state.profile}
-                                                     dispatch={props.dispatch} />} />
+            <Route path='/profile' element={<Profile store={props.store} />} />
             <Route path='/dialogs/*' element={<Dialogs messages={props.state.messages}
                                                        dispatch={props.dispatch} />} />
             <Route path='/news' element={<News /> } />

@@ -2,20 +2,17 @@ import React from 'react';
 import classes from './ProfileInfo.module.css';
 import background from './../Images/profile_background.jpg';
 import logo from './../Images/logo.jpg';
-import { addPostActionCreate, updateNewPostTextActionCreate } from '../../../redux/profile-reducer';
+
 
 const ProfileInfo = (props) => {
 
   let addPost = () => {
-    let text = props.newPostText;
-    if(text) {
-      props.dispatch( addPostActionCreate() )
-    }
-  }
+    props.addPost();
+  };
  
   let onPostChange = (e) => {
     let text = e.target.value;
-    props.dispatch( updateNewPostTextActionCreate(text) );
+    props.updateNewPostText(text);
   }
 
   return (
