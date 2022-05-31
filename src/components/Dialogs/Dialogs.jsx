@@ -6,9 +6,8 @@ import NewMessage from './Message/NewMessage';
 
 
 function Dialogs(props) {
-  let dialogData = props.messages.dialogs.map(dialog => <Dialog name={dialog.name} id={dialog.id}/>);
-  let messagesData = props.messages.dialogText.map(elem => <Message text={elem.message}/>);
-
+  let dialogData = props.dialogs.map(dialog => <Dialog name={dialog.name} id={dialog.id}/>);
+  let messagesData = props.dialogText.map(elem => <Message text={elem.message}/>);
   return (
     <div className={classes.dialogs}>
       <div className={classes.title}>
@@ -23,7 +22,7 @@ function Dialogs(props) {
             {messagesData}
           </div>
           <div className={classes.newMessage}>
-            <NewMessage dispatch={props.dispatch} newMessageText={props.messages.newMessageText} />
+            <NewMessage newMessageText={props.newMessageText} updateNewMessageText={props.updateNewMessageText} onAddMassage={props.addMessage} />
           </div>
         </div>
       </div>
