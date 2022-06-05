@@ -7,7 +7,9 @@ import logo from './../Images/logo.jpg';
 const ProfileInfo = (props) => {
 
   let addPost = () => {
-    props.addPost();
+    if (props.newPostText) {
+      props.addPost();
+    }
   };
  
   let onPostChange = (e) => {
