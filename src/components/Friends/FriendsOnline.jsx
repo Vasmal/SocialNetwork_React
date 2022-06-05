@@ -1,5 +1,5 @@
 import React from 'react';
-import FriendOnline from './Friend/friendOnline';
+import FriendOnline from './Friend/FriendOnline';
 import classes from './Friends.module.css';
 
 const FriendsOnline = (props) => {
