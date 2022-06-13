@@ -6,7 +6,7 @@ const FriendsOnline = (props) => {
 let online = props.online;
   return (
     <div className={classes.friendsOnline}>
-      {online.map(friend => <FriendOnline name={friend.name} id={friend.id} />)}
+      {online.map(friend => <FriendOnline name={friend.name} id={friend.id} key={friend.id}/>)}
     </div>
   );
 }

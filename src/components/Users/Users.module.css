@@ -68,9 +68,19 @@
   justify-content: space-between;
 }
 
+.user__name {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #3A3A3A;
+}
+
 .user__location {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  font-size: 14px;
+  line-height: 16px;
+  color: #3A3A3A;
 }
