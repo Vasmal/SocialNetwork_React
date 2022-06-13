@@ -8,9 +8,7 @@ let initialState = {
 }
 
 const friendsReducer = (state = initialState, action) => {
-  let stateCopy = {...state};
-  stateCopy.online = [...state.online];
-  return stateCopy;
+  return state
 }
 
 

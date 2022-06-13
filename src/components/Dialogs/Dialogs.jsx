@@ -6,7 +6,7 @@ import NewMessage from './Message/NewMessage';
 
 
 function Dialogs(props) {
-  let dialogData = props.dialogs.map(dialog => <Dialog name={dialog.name} id={dialog.id}/>);
+  let dialogData = props.dialogs.map(dialog => <Dialog name={dialog.name} key={dialog.id} id={dialog.id}/>);
   let messagesData = props.dialogText.map(elem => <Message text={elem.message}/>);
   return (
     <div className={classes.dialogs}>
