@@ -20,6 +20,9 @@ return (
         <NavLink to="/music" className={setActive}>Music</NavLink>
       </div>
       <div>
+        <NavLink to="/users" className={setActive}>Users</NavLink>
+      </div>
+      <div>
         <NavLink to="/settings" className={setActive}>Settings</NavLink>
       </div>
     </nav>

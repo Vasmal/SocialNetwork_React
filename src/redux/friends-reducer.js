@@ -8,7 +8,10 @@ let initialState = {
 }
 
 const friendsReducer = (state = initialState, action) => {
-  return state
+  switch (action.type) {
+    default: 
+      return state
+  }
 }
 
 

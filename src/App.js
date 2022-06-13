@@ -10,6 +10,7 @@ import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsСontainer';
 import FriendsOnlineContainer from './components/Friends/FriendsOnlineContainer';
+import Users from './components/Users/Users';
 
 function App(props) {
   return (
@@ -18,15 +19,16 @@ function App(props) {
         <Header />
         <aside className='aside'>
           <Navbar />
-          <FriendsOnlineContainer store={props.store} /> 
+          <FriendsOnlineContainer /> 
         </aside>
         
         <div className="content">
           <Routes>
-            <Route path='/profile' element={<Profile store={props.store}/>} />
-            <Route path='/dialogs/*' element={<DialogsContainer store={props.store}/>} />
+            <Route path='/profile' element={<Profile/>} />
+            <Route path='/dialogs/*' element={<DialogsContainer/>} />
             <Route path='/news' element={<News /> } />
             <Route path='/music' element={<Music />} />
+            <Route path='/users' element={<Users />} />
             <Route path='/settings' element={<Settings />} />
           </Routes>
         </div>  
